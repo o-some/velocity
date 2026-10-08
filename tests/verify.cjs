@@ -81,10 +81,23 @@ assert(run('PANORAMA_TEXTURES.size===3&&Array.from(PANORAMA_TEXTURES.values()).e
 const failedImages=harness(true);failedImages.run('render(.016);cfg.track=0;start("time");render(.016)');for(const request of failedImages.imageRequests)request.onError(new Error('simulated unavailable asset'));failedImages.run('render(.016)');assert(failedImages.run('G3.ok&&Array.from(SURFACE_TEXTURES.values()).every(t=>t.userData.state==="fallback"&&t.image.width===32)'));assert.strictEqual(failedImages.errors.length,0);
 // Actual pointer handlers, including cancel, multi-touch and release on pause.
 run("cfg.touch=0;cfg.sens=1;start('time');R.ph='run'");h.node('#steerpad').emit('pointerdown',{pointerId:11,clientX:100});h.node('#steerpad').emit('pointermove',{pointerId:11,clientX:121});
-assert.strictEqual(run('input().s'),.5);h.buttons[4].emit('pointerdown',{pointerId:12});assert.strictEqual(run('input().t'),1);
+assert(run('input().s>0&&input().s<.3'));h.buttons[4].emit('pointerdown',{pointerId:12});assert.strictEqual(run('input().t'),1);
 h.node('#steerpad').emit('pointerdown',{pointerId:13,clientX:200});assert.strictEqual(run('ACTIVE_STEER_POINTER'),11);
 h.node('#steerpad').emit('pointercancel',{pointerId:11});assert.strictEqual(run('input().s'),0);assert.strictEqual(run('input().t'),1);
 run('pause(true)');assert.strictEqual(run('input().t'),0);assert.strictEqual(run('ACTIVE_STEER_POINTER'),null);run('pause(false)');
+// Gentle center, symmetric progressive travel, saturation and independent throttle.
+h.node('#steerpad').getBoundingClientRect=()=>({left:12,width:178});
+h.node('#steerpad').emit('pointerdown',{pointerId:21,clientX:110});assert.strictEqual(run('input().s'),0);
+h.node('#steerpad').emit('pointermove',{pointerId:21,clientX:112});assert.strictEqual(run('input().s'),0);
+h.node('#steerpad').emit('pointermove',{pointerId:21,clientX:140});const right=run('input().s');assert(right>0&&right<.4);
+h.node('#steerpad').emit('pointermove',{pointerId:21,clientX:80});assert(Math.abs(run('input().s')+right)<1e-10);
+h.events.get('pointermove')({pointerId:21,clientX:300,preventDefault(){}});assert.strictEqual(run('input().s'),1);
+h.events.get('pointermove')({pointerId:22,clientX:0,preventDefault(){}});assert.strictEqual(run('input().s'),1);
+h.events.get('pointerup')({pointerId:21});assert.strictEqual(run('input().s'),0);assert.strictEqual(run('ACTIVE_STEER_POINTER'),null);
+const capture=h.node('#steerpad').setPointerCapture;h.node('#steerpad').setPointerCapture=()=>{throw Error('capture unavailable')};
+h.node('#steerpad').emit('pointerdown',{pointerId:23,clientX:110});h.events.get('pointermove')({pointerId:23,clientX:20,preventDefault(){}});assert.strictEqual(run('input().s'),-1);
+h.node('#steerpad').emit('lostpointercapture',{pointerId:23});assert.strictEqual(run('input().s'),0);h.node('#steerpad').setPointerCapture=capture;
+run('cfg.touch=1');h.node('#steerpad').emit('pointerdown',{pointerId:24,clientX:110});assert.strictEqual(run('ACTIVE_STEER_POINTER'),null);run('cfg.touch=0');
 run('KY.KeyW=1;TC.axis=-.8');h.events.get('blur')();assert.strictEqual(run('input().t'),0);assert.strictEqual(run('input().s'),0);
 // Recovering an AI car must not release the player's held controls.
 run("newRace(false,'race','g');R.ph='run';KY.KeyW=1;TC.axis=.4;respawn(R.cars.find(c=>!c.isP))");assert.strictEqual(run('input().t'),1);assert.strictEqual(run('input().s'),.4);run('clearControls()');

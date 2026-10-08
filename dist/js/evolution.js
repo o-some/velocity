@@ -1,6 +1,6 @@
 "use strict";
 // UI and input enhancements use the existing simulation and vgp save namespace.
-let ACTIVE_STEER_POINTER=null,STEER_ORIGIN=0,COACH_LAST='';
+let ACTIVE_STEER_POINTER=null,STEER_ORIGIN=0,STEER_TRAVEL=60,COACH_LAST='';
 const VENUE_VIEW={yaw:0,pitch:0,pointer:null,lastX:0,lastY:0};
 function releaseVenuePointer(){const v=$('#horizonview');if(VENUE_VIEW.pointer!==null){const id=VENUE_VIEW.pointer;VENUE_VIEW.pointer=null;try{v.releasePointerCapture(id)}catch(e){}}v?.classList.remove('dragging')}
 function updateVenueView(){const degrees=((Math.round(VENUE_VIEW.yaw*180/Math.PI)%360)+360)%360;$('#horizonview').setAttribute('aria-valuenow',String(degrees));$('#horizonview').setAttribute('aria-valuetext',degrees+' Grad');}
@@ -15,23 +15,39 @@ function initVenueView(){
 }
 function clearControls(){
   for(const k in KY)KY[k]=0;for(const k in TC)TC[k]=0;
-  const pad=$('#steerpad');if(ACTIVE_STEER_POINTER!==null){try{pad.releasePointerCapture(ACTIVE_STEER_POINTER)}catch(e){}}ACTIVE_STEER_POINTER=null;
-  $('#steerknob')?.style.setProperty('--steer','0px');pad?.classList.remove('active');$$('#tc button').forEach(b=>b.classList.remove('d'));
+  releaseAnalogSteer();$$('#tc button').forEach(b=>b.classList.remove('d'));
 }
 function applyEvolutionPreferences(){
   document.body.dataset.touch=String(cfg.touch);document.body.dataset.quality=String(cfg.quality);document.body.dataset.shake=String(cfg.shake);
   if(G3?.cur?.world)G3.cur.world.guide.visible=cfg.line&&!R.demo;
 }
 function setAnalogSteer(clientX){
-  const dx=Math.max(-42,Math.min(42,clientX-STEER_ORIGIN));TC.axis=dx/42;$('#steerknob').style.setProperty('--steer',dx+'px');
+  const dx=Math.max(-STEER_TRAVEL,Math.min(STEER_TRAVEL,clientX-STEER_ORIGIN));
+  const n=Math.max(0,(Math.abs(dx)-3)/(STEER_TRAVEL-3));
+  TC.axis=Math.sign(dx)*(.65*n+.35*n*n*n);
+  $('#steerknob').style.setProperty('--steer',(dx/STEER_TRAVEL*42)+'px');
+}
+function releaseAnalogSteer(){
+  const pad=$('#steerpad'),id=ACTIVE_STEER_POINTER;ACTIVE_STEER_POINTER=null;TC.axis=0;
+  if(id!==null){try{pad.releasePointerCapture(id)}catch(e){}}
+  $('#steerknob')?.style.setProperty('--steer','0px');pad?.style.setProperty('--steer-anchor','0px');pad?.classList.remove('active');
 }
 function initEvolution(){
   applyEvolutionPreferences();
   initVenueView();
   const pad=$('#steerpad');
-  pad.addEventListener('pointerdown',e=>{if(ACTIVE_STEER_POINTER!==null||!R||R.demo||R.paused||!['form','count','run'].includes(R.ph))return;e.preventDefault();initAudio();ACTIVE_STEER_POINTER=e.pointerId;STEER_ORIGIN=e.clientX;pad.setPointerCapture(e.pointerId);pad.classList.add('active');setAnalogSteer(e.clientX)});
-  pad.addEventListener('pointermove',e=>{if(e.pointerId===ACTIVE_STEER_POINTER){e.preventDefault();setAnalogSteer(e.clientX)}});
-  for(const type of['pointerup','pointercancel','lostpointercapture'])pad.addEventListener(type,e=>{if(e.pointerId===ACTIVE_STEER_POINTER){ACTIVE_STEER_POINTER=null;TC.axis=0;pad.classList.remove('active');$('#steerknob').style.setProperty('--steer','0px')}});
+  pad.addEventListener('pointerdown',e=>{if(e.button>0||cfg.touch!==0||ACTIVE_STEER_POINTER!==null||!R||R.demo||R.paused||!['form','count','run'].includes(R.ph))return;e.preventDefault();initAudio();ACTIVE_STEER_POINTER=e.pointerId;STEER_ORIGIN=e.clientX;
+    const rect=pad.getBoundingClientRect?.();STEER_TRAVEL=rect?Math.max(48,Math.min(64,rect.width*.36)):60;
+    // Neutral begins under the thumb, not at an arbitrary point on the screen.
+    const anchorLimit=rect?Math.max(0,Math.min(24,rect.width/2-66)):0;
+    const anchor=rect?Math.max(-anchorLimit,Math.min(anchorLimit,e.clientX-(rect.left+rect.width/2))):0;
+    pad.style.setProperty('--steer-anchor',anchor+'px');try{pad.setPointerCapture(e.pointerId)}catch(error){}pad.classList.add('active');setAnalogSteer(e.clientX)});
+  const move=e=>{if(e.pointerId===ACTIVE_STEER_POINTER){e.preventDefault();setAnalogSteer(e.clientX)}};
+  const release=e=>{if(e.pointerId===ACTIVE_STEER_POINTER)releaseAnalogSteer()};
+  pad.addEventListener('pointermove',move);
+  for(const type of['pointerup','pointercancel','lostpointercapture'])pad.addEventListener(type,release);
+  // Continue steering outside the hit area, even if pointer capture is unavailable.
+  addEventListener('pointermove',move,{passive:false});for(const type of['pointerup','pointercancel'])addEventListener(type,release);
   $('#camcycle').onclick=()=>{if(!R||R.demo||R.paused)return;CAMF=((+CAMF)+1)%3;toast(['CHASE-KAMERA','HOHE KAMERA','COCKPIT-KAMERA'][CAMF],'#72cbdd')};
   $('#recover').onclick=()=>{if(R?.pl&&R.ph==='run'&&!R.paused&&!R.pl.auto){respawn(R.pl);toast('ZURÜCK AUF DER STRECKE')}};
   // A live showroom label and quick-select world cards share existing choices.
