@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "generated_on": "2026-10-08",
+  "prompts": [
+    {
+      "asset": "aurora",
+      "prompt": "Use case: stylized-concept. Asset type: flat UV diffuse albedo livery texture for a 3D grand prix racing car, square 1024x1024. Design an elegant original scarlet red racing paint surface, a broad clean white diagonal speed stripe crossing the square from lower left to upper right, a fine dark graphite border and thinner offset white pinstripe. Subtle fine metallic paint micrograin, small understated panel seam lines, clean rich racing red fields occupying about 75 percent. Entire image is only a flat 2D surface design to wrap around car panels, orthographic uniform neutral lighting, crisp graphic print quality. No depicted car, perspective, highlights, reflections, drop shadows, rivets, writing, numbers, logos, badges, watermark or border."
+    },
+    {
+      "asset": "nova",
+      "prompt": "Use case: stylized-concept. Asset type: flat UV diffuse albedo livery texture for a 3D grand prix racing car, square 1024x1024. Elegant original electric cyan racing paint surface, dark navy sweeping angular diagonal chevron bands with very thin ice-white accents. Clean dynamic aerospace graphic design, cyan fields about 75 percent of image, subtle fine metallic paint micrograin and discreet panel seam lines. Entire image only flat 2D surface design to wrap around car panels, orthographic uniform neutral lighting, crisp premium print quality. No depicted car, perspective, highlights, reflections, drop shadows, rivets, writing, numbers, logos, badges, watermark or border."
+    },
+    {
+      "asset": "helix",
+      "prompt": "Use case: stylized-concept. Asset type: flat UV diffuse albedo livery texture for a 3D grand prix racing car, square 1024x1024. Elegant original rich golden-yellow racing paint surface, graphite black twin diagonal speed bands with a thin white separating pinstripe, subtle precise angular line accents and fine metallic paint micrograin. Golden-yellow fields occupy about 75 percent of image, premium clean motorsport graphic design. Entire image only flat 2D surface design to wrap around car panels, orthographic uniform neutral lighting, crisp graphic print quality. No depicted car, perspective, highlights, reflections, drop shadows, rivets, writing, numbers, logos, badges, watermark or border."
+    },
+    {
+      "asset": "titan",
+      "prompt": "Use case: stylized-concept. Asset type: flat UV diffuse albedo livery texture for a 3D grand prix racing car, square 1024x1024. Elegant original vivid lime green racing paint surface, strong dark graphite angular diagonal graphic with fine silver pinstripes and understated angular technical line accents, premium clean motorsport design. Lime fields about 75 percent of image, subtle fine metallic paint micrograin, uniform restrained color. Entire image only flat 2D surface design to wrap around car panels, orthographic uniform neutral lighting, crisp graphic print quality. No depicted car, perspective, highlights, reflections, drop shadows, rivets, writing, numbers, logos, badges, watermark or border."
+    }
+  ]
+}

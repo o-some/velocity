@@ -1,0 +1,61 @@
+{
+  "version": "2.1.0",
+  "assets": [
+    {
+      "name": "asphalt",
+      "file": "asphalt.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 488690,
+      "sha256": "1b56af0a2ef8a16225458de0a7e44b99b094fee877626e3eddde7ee065500c6f",
+      "source": "AI-generated with image_gen, 2026-10-08",
+      "usage": "diffuse albedo, sRGB, repeat wrapping, mipmaps",
+      "processing": "Lanczos resize and WebP encoding only; no semantic image edits"
+    },
+    {
+      "name": "grass",
+      "file": "grass.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 605366,
+      "sha256": "a4e9e9bf5f0b8353b9dae9a8d0c833667abdc37284e56843bcfed9e1cdc61cc7",
+      "source": "AI-generated with image_gen, 2026-10-08",
+      "usage": "diffuse albedo, sRGB, repeat wrapping, mipmaps",
+      "processing": "Lanczos resize and WebP encoding only; no semantic image edits"
+    },
+    {
+      "name": "sand",
+      "file": "sand.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 463300,
+      "sha256": "252d0f3ba052a2827c4fa0e22a6a0eecc8e5aad88663526e92de5f28e5309456",
+      "source": "AI-generated with image_gen, 2026-10-08",
+      "usage": "diffuse albedo, sRGB, repeat wrapping, mipmaps",
+      "processing": "Lanczos resize and WebP encoding only; no semantic image edits"
+    },
+    {
+      "name": "bark",
+      "file": "bark.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 458910,
+      "sha256": "507d8c88e07c06b50fe203d8c2bfdd1c26370a2232418dc38e1e5bb90037aae0",
+      "source": "AI-generated with image_gen, 2026-10-08",
+      "usage": "diffuse albedo, sRGB, repeat wrapping, mipmaps",
+      "processing": "Lanczos resize and WebP encoding only; no semantic image edits"
+    },
+    {
+      "name": "foliage",
+      "file": "foliage.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 398372,
+      "sha256": "5f75c765e8c7c50073b37767a0498f085b2e3112aa152f8dc4dfba122ae29071",
+      "source": "AI-generated with image_gen, 2026-10-08",
+      "usage": "diffuse albedo, sRGB, repeat wrapping, mipmaps",
+      "processing": "Lanczos resize and WebP encoding only; no semantic image edits"
+    }
+  ],
+  "note": "Generated to tile; exact edge continuity and GPU appearance remain subject to browser visual review. PNG masters are included in the Dropbox texture pack."
+}

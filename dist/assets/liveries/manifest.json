@@ -1,0 +1,49 @@
+{
+  "version": "2.3.0",
+  "assets": [
+    {
+      "name": "aurora",
+      "file": "aurora.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 113614,
+      "sha256": "217018339eb8155d549f811b36bd7210da6ec04b31a1f20220e2bc2f5b6065df",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only",
+      "usage": "sRGB diffuse car paint albedo, separate physical clearcoat"
+    },
+    {
+      "name": "nova",
+      "file": "nova.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 161516,
+      "sha256": "2945c91f6202e866d3ab19b0b72ab028bee8177f3ea8e4aa147f50b22c7c55b3",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only",
+      "usage": "sRGB diffuse car paint albedo, separate physical clearcoat"
+    },
+    {
+      "name": "helix",
+      "file": "helix.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 147256,
+      "sha256": "b4557b0d0ce97c63d00b65cc5dea3ddd4932470d7264281c462cbd3fefa9fb96",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only",
+      "usage": "sRGB diffuse car paint albedo, separate physical clearcoat"
+    },
+    {
+      "name": "titan",
+      "file": "titan.webp",
+      "width": 1024,
+      "height": 1024,
+      "bytes": 140580,
+      "sha256": "f42752dbfdf311ef2b6b19c8e2dc4baed30f47ec329ec0139f69f25f97b42e4a",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only",
+      "usage": "sRGB diffuse car paint albedo, separate physical clearcoat"
+    }
+  ]
+}

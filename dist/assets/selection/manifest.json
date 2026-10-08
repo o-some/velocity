@@ -1,0 +1,38 @@
+{
+  "version": "2.4.0",
+  "assets": [
+    {
+      "name": "rosso",
+      "file": "rosso.webp",
+      "width": 1280,
+      "height": 640,
+      "bytes": 274254,
+      "sha256": "674d3abd3132e014e77b6f997e22a474dbfcb8ae57c9061210018c3f759d5dd2",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only",
+      "usage": "circuit selection mood artwork, not exact track layout"
+    },
+    {
+      "name": "harbor",
+      "file": "harbor.webp",
+      "width": 1280,
+      "height": 640,
+      "bytes": 257450,
+      "sha256": "7580cacdc0860d1a082769f68b8f3913f32e440a03f29011b786742c3ef76079",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only",
+      "usage": "circuit selection mood artwork, not exact track layout"
+    },
+    {
+      "name": "desert",
+      "file": "desert.webp",
+      "width": 1280,
+      "height": 640,
+      "bytes": 197214,
+      "sha256": "47ad551b240cf9250b6251f5986b5d989e2ac44895c1756eec9fa6ea6cbe1c48",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only",
+      "usage": "circuit selection mood artwork, not exact track layout"
+    }
+  ]
+}

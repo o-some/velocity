@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="de"><head>
+<base href="./dist/"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#07080b"><meta name="description" content="VELOCITY GP Evolution: drei Rennwelten, vier Teams und deine nächste Bestzeit."><title>VELOCITY GP · Grand Prix</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;800&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/base.css"><link rel="stylesheet" href="styles/evolution.css"></head><body>
+<svg width="0" height="0" style="position:absolute"><symbol id="car" viewBox="0 0 640 170">
+<ellipse cx="330" cy="158" rx="300" ry="8" fill="#000" opacity=".55"/>
+<path d="M14 30h78v10H66v62H54V40H14z" fill="var(--d)"/>
+<path d="M40 104 84 86 160 76 228 50 304 44 346 66 436 86 580 110 628 118V128L560 130H64Z" fill="var(--c)"/>
+<path d="M228 50 304 44 346 66 296 60 250 58Z" fill="#fff" opacity=".22"/>
+<path d="M110 100H520" stroke="var(--d)" stroke-width="5" opacity=".7"/>
+<path d="M286 72q26-38 62-6" stroke="#0b0b0e" stroke-width="7" fill="none"/><circle cx="322" cy="70" r="11" fill="var(--d)"/>
+<path d="M556 128 636 126v12H540Z" fill="var(--d)"/>
+<circle cx="152" cy="120" r="40" fill="#0b0b0e"/><circle cx="152" cy="120" r="20" fill="#2b2d35" stroke="#6b6f7b" stroke-width="3"/>
+<circle cx="488" cy="124" r="33" fill="#0b0b0e"/><circle cx="488" cy="124" r="16" fill="#2b2d35" stroke="#6b6f7b" stroke-width="3"/></symbol></svg>
+<canvas id="g3"></canvas><canvas id="g"></canvas><div id="vig"></div>
+
+<div id="hud" class="hud">
+<div class="gl pos"><b id="pp">P5</b><span id="pt2">/8</span></div>
+<div class="gl lapb"><div class="row"><div><small>RUNDE</small><b id="lp">1/3</b></div><div><small>ZEIT</small><b id="tm">0:00.000</b></div><div><small>LETZTE · BESTE</small><b id="ls">—</b></div></div></div>
+<div class="gl tw" id="tw"></div>
+<div class="gl dmg" id="dmg"><svg viewBox="0 0 60 100" id="dsv"><rect class="w" x="6" y="22" width="12" height="20" rx="3"/><rect class="w" x="42" y="22" width="12" height="20" rx="3"/><rect class="w" x="4" y="64" width="14" height="22" rx="3"/><rect class="w" x="42" y="64" width="14" height="22" rx="3"/><rect data-z="0" x="8" y="3" width="44" height="9" rx="2"/><path data-z="0" d="M26 12h8l3 18H23z"/><rect data-z="3" x="14" y="30" width="10" height="36" rx="4"/><rect data-z="1" x="36" y="30" width="10" height="36" rx="4"/><rect data-z="4" x="24" y="30" width="12" height="40" rx="5"/><rect data-z="2" x="24" y="70" width="12" height="16" rx="2"/><rect data-z="2" x="8" y="88" width="44" height="9" rx="2"/></svg><div><small>SCHADEN</small><b id="dpc">0%</b><small id="dsp">TEMPO −0%</small></div></div>
+<canvas id="mm" class="mm" width="150" height="150"></canvas>
+<div class="gl dash"><div class="rev"><i id="rv"></i></div><div class="dr"><b id="sp">0</b><small>KM/H</small><b id="gr">N</b></div><div class="en" id="enb"><i id="en"></i></div></div>
+<div id="lt"><i></i><i></i><i></i><i></i><i></i></div><div id="ann"></div>
+<div class="race-context" id="racecontext"></div><div class="coach" id="coach" aria-live="polite"></div><div class="race-tools"><button id="camcycle" aria-label="Kamera wechseln">CAM</button><button id="recover" aria-label="Auf Strecke zurücksetzen">↺</button></div><div id="toast"></div><button id="pzb">II</button>
+<div id="tc"><div class="steer-buttons"><button data-k="l">◀</button><button data-k="r">▶</button></div><div><button data-k="o">BOOST</button><button data-k="b">BREMSE</button><button data-k="t">GAS</button></div></div><div id="steerpad" aria-label="Analoge Lenkung" role="group"><div class="steer-ring"><i id="steerknob"></i><span>LENKEN</span></div></div>
+</div>
+
+<section class="scr on" id="menu"><div class="sl" id="sl"></div>
+<svg class="bigcar" id="bc" viewBox="0 0 640 170"><use href="#car"/></svg>
+<div class="logo"><small>SEASON 02 / GRAND PRIX</small><h1>VELOCITY<span>GP</span></h1></div>
+<div class="menu-intro">Vier Teams. Drei Welten. Deine Ideallinie.</div><div id="horizonview" class="horizon-view" role="slider" tabindex="0" aria-label="Panorama drehen. Ziehen oder Pfeiltasten verwenden. Pos1 setzt die Ansicht zurück." aria-valuemin="0" aria-valuemax="360" aria-valuenow="0" aria-orientation="horizontal"><span>↔ KULISSE ENTDECKEN <small id="venuecaption">GOLDEN HOUR</small></span></div><button id="horizonreset" aria-label="Panorama auf Ausgangsansicht zurücksetzen">ANSICHT ZURÜCKSETZEN ↺</button><nav>
+<button class="mi pri" data-a="race"><b>RENNEN STARTEN</b><i>Grand Prix gegen 7 Fahrer</i></button>
+<button class="mi" data-a="career"><b>KARRIERE</b><i id="ci">Saison</i></button>
+<button class="mi" data-a="time"><b>ZEITFAHREN</b><i>Allein auf der Strecke</i></button>
+<button class="mi" data-a="garage"><b>FAHRZEUGE</b><i>Garage und Technik</i></button>
+<button class="mi" data-a="tracks"><b>STRECKEN</b><i>3 Circuits</i></button>
+<button class="mi" data-a="settings"><b>EINSTELLUNGEN</b><i>Runden, KI, Sound</i></button></nav>
+<div class="world-selector" id="worldsel" aria-label="Strecke wählen"></div><div class="menu-session" id="session"></div><div class="edition">STUDIO / 2.5 <span>CHELONAKI</span></div><div class="foot" id="mf"></div><div class="gl chip" id="chip"></div></section>
+
+<section class="scr" id="garage"><div class="hd"><button class="bk" data-b>‹ ZURÜCK</button><h2>FAHRZEUGE</h2></div>
+<div class="gar"><svg class="gcar" id="gcar" viewBox="0 0 640 170"><use href="#car"/></svg><div><small id="ct"></small><h2 id="cn"></h2><div id="cs"></div></div></div><div class="row" id="cl"></div></section>
+
+<section class="scr" id="tracks"><div class="hd"><button class="bk" data-b>‹ ZURÜCK</button><h2>STRECKEN</h2></div><div class="tl" id="tl"></div></section>
+
+<section class="scr" id="settings"><div class="hd"><button class="bk" data-b>‹ ZURÜCK</button><h2>EINSTELLUNGEN</h2></div>
+<div class="opt"><span>RUNDEN</span><button class="ch" data-o="laps:3">3</button><button class="ch" data-o="laps:5">5</button><button class="ch" data-o="laps:8">8</button><input id="lapin" type="number" inputmode="numeric" min="1" max="99" placeholder="1–99" aria-label="Eigene Rundenzahl"></div>
+<div class="opt"><span>KI-STÄRKE</span><button class="ch" data-o="diff:0">Leicht</button><button class="ch" data-o="diff:1">Mittel</button><button class="ch" data-o="diff:2">Schwer</button></div>
+<div class="opt"><span>WETTER</span><button class="ch" data-o="rain:false">Trocken</button><button class="ch" data-o="rain:true">Regen</button></div>
+<div class="opt"><span>SOUND</span><button class="ch" data-o="snd:true">An</button><button class="ch" data-o="snd:false">Aus</button></div>
+<div class="opt"><span>GRAFIK</span><button class="ch" data-o="quality:0">Sparsam</button><button class="ch" data-o="quality:1">Ausgewogen</button><button class="ch" data-o="quality:2">Detail</button></div>
+<div class="opt"><span>TOUCH-LENKUNG</span><button class="ch" data-o="touch:0">Analog</button><button class="ch" data-o="touch:1">Tasten</button></div>
+<div class="opt"><span>LENKGEFÜHL</span><button class="ch" data-o="sens:0.8">Sanft</button><button class="ch" data-o="sens:1">Direkt</button><button class="ch" data-o="sens:1.2">Sport</button></div>
+<div class="opt"><span>STABILITÄTSHILFE</span><button class="ch" data-o="assist:true">An</button><button class="ch" data-o="assist:false">Aus</button></div>
+<div class="opt"><span>IDEALLINIE</span><button class="ch" data-o="line:true">An</button><button class="ch" data-o="line:false">Aus</button></div>
+<div class="opt"><span>KAMERABEWEGUNG</span><button class="ch" data-o="shake:true">An</button><button class="ch" data-o="shake:false">Ruhig</button></div>
+<div class="opt"><span>DATEN</span><button class="ch" id="rsd">Fortschritt löschen</button></div>
+<div class="opt"><span>ANZEIGE</span><button class="ch" id="fs">Vollbild</button></div><div class="foot">Steuerung: Pfeiltasten/WASD oder Controller · Shift = Boost · Leertaste = Handbremse · C = Kamera · R = Zurücksetzen · Esc = Pause</div></section>
+
+<section class="scr" id="qres"><div class="resw"><small>QUALIFYING</small><h2 class="big">STARTAUFSTELLUNG</h2><table><thead><tr><th></th><th>FAHRER</th><th>ZEIT</th></tr></thead><tbody id="qb"></tbody></table><div class="btns"><button class="mi pri" id="qgo" style="animation:none"><b>RENNEN STARTEN</b></button></div></div></section>
+<section class="scr" id="pause"><div class="resw" style="text-align:center"><h2 class="big">PAUSE</h2><button class="mi" style="margin:8px auto;animation:none" id="rsm"><b>FORTSETZEN</b></button><button class="mi" style="margin:8px auto;animation:none" id="rst"><b>NEU STARTEN</b></button><button class="mi" style="margin:8px auto;animation:none" id="qt"><b>HAUPTMENÜ</b></button></div></section>
+
+<section class="scr" id="res"><div class="resw"><small id="rsub"></small><h2 class="big" id="rt"></h2><div id="pod"></div>
+<table><thead><tr><th>#</th><th>FAHRER</th><th>ZEIT</th><th>BESTE RUNDE</th><th>PKT</th></tr></thead><tbody id="rb"></tbody></table>
+<div id="rs"></div><div class="btns"><button class="mi pri" id="again"><b>NOCHMAL FAHREN</b></button><button class="mi" id="tomenu"><b>HAUPTMENÜ</b></button></div></div></section>
+
+<script src="vendor/three-r128.min.js"></script>
+<script src="js/studio.js"></script><script src="js/world.js"></script><script src="js/evolution.js"></script><script src="js/game.js"></script></body></html>

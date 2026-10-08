@@ -1,0 +1,39 @@
+{
+  "version": "2.2.0",
+  "assets": [
+    {
+      "name": "mediterranean",
+      "file": "mediterranean.webp",
+      "width": 2048,
+      "height": 1024,
+      "bytes": 395584,
+      "sha256": "db21bfcc74fa037a2eb6c5a0363d8f577e7aa5e13e8633733630f20ed3c1b459",
+      "source": "image_gen, 2026-10-08",
+      "processing": "resize and WebP encoding only",
+      "usage": "spherical 360-degree horizon background; sRGB albedo"
+    },
+    {
+      "name": "harbor",
+      "file": "harbor.webp",
+      "width": 2048,
+      "height": 1024,
+      "bytes": 250082,
+      "sha256": "0909aa3a6cab2a6fecfbc9e3b91825a46dfe71a2ede5704f8ccf751561e47cdb",
+      "source": "image_gen, 2026-10-08",
+      "processing": "resize and WebP encoding only",
+      "usage": "spherical 360-degree horizon background; sRGB albedo"
+    },
+    {
+      "name": "desert",
+      "file": "desert.webp",
+      "width": 2048,
+      "height": 1024,
+      "bytes": 276540,
+      "sha256": "9069b5117103fe9280b47653e84c923aa389dd425646e6d7cb22385dfb4a9141",
+      "source": "image_gen, 2026-10-08",
+      "processing": "resize and WebP encoding only",
+      "usage": "spherical 360-degree horizon background; sRGB albedo"
+    }
+  ],
+  "limits": "Rendered seams, spherical projection appearance and GPU performance require browser review."
+}

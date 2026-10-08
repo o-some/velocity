@@ -1,0 +1,53 @@
+{
+  "version": "2.5.0",
+  "assets": [
+    {
+      "name": "aurora",
+      "file": "aurora.webp",
+      "width": 960,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 117012,
+      "sha256": "40153d73e3a864915a70a4e29cc16806c93f2e06eb612f63608fb93d0af4758a",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only; original alpha retained",
+      "usage": "photorealistic team selection artwork; not a screenshot or 3D model"
+    },
+    {
+      "name": "nova",
+      "file": "nova.webp",
+      "width": 960,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 110860,
+      "sha256": "31c81e9e6bfdf88221edcb9248ed730bfa6ab04ed93a0150d14abce244fb0771",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only; original alpha retained",
+      "usage": "photorealistic team selection artwork; not a screenshot or 3D model"
+    },
+    {
+      "name": "helix",
+      "file": "helix.webp",
+      "width": 960,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 119072,
+      "sha256": "114bfb206221bcecd7cfa4dabd98d232df7e100882a7ec6a318febf38ab3f4f3",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only; original alpha retained",
+      "usage": "photorealistic team selection artwork; not a screenshot or 3D model"
+    },
+    {
+      "name": "titan",
+      "file": "titan.webp",
+      "width": 960,
+      "height": 640,
+      "mode": "RGBA",
+      "bytes": 125700,
+      "sha256": "554cf85ff6b864ee49e37d5d559082e030f731454164d95a12874cd9cda5dbd3",
+      "source": "built-in image_gen, 2026-10-08",
+      "processing": "Lanczos resize and WebP encoding only; original alpha retained",
+      "usage": "photorealistic team selection artwork; not a screenshot or 3D model"
+    }
+  ]
+}

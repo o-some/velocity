@@ -1,0 +1,105 @@
+{
+  "version": "2.5.0",
+  "status": "AUTOMATED RUNTIME TESTED",
+  "scope": "Node VM, DOM/canvas/renderer/image-loader doubles; actual Three.js r128 geometry and camera math. Asset hashes and WebP signatures verified. No GPU rasterization or browser image decode.",
+  "studio_pmrem_failure_restoration": "PASS: bundled Three.js PMREM constructor and render failure restore target, tone mapping, encoding and autoClear with renderer double",
+  "live_stage_reflection_camera_clip_and_renderer_state": "PASS with GPU render double; simulated failure restores state and preserves physical fallback",
+  "mirror_shader_injection": "PASS against bundled Three.js r128 shader source; no actual GPU compile",
+  "smooth_sculpted_panels_and_unchanged_damage_envelope": "PASS",
+  "studio_rotation_reduced_motion": "PASS",
+  "photorealistic_portrait_assets": "PASS: four hashed WebP team artworks; not actual game screenshots",
+  "rounded_car_geometry_cap_normals_bevel_dimensions_wheel_spokes": "PASS; matching seam normals and five instanced-buffer disposal events",
+  "premium_circuit_structure_corridor_clearance": "PASS: actual world-space Box3 and independent centerline segment checks",
+  "quality_detail_visibility": "PASS",
+  "woven_fence_material_uvs": "PASS",
+  "machined_showroom_stage_geometry": "PASS",
+  "selection_assets_hashes_and_local_references": "PASS: three 1280x640 WebP mood artworks; real layout remains separate SVG",
+  "four_team_liveries_uv_physical_paint_labels": "PASS",
+  "ghost_material_and_texture_failure": "PASS",
+  "showroom_photo_background_aspect_shared_map_isolation": "PASS at 1440x900, 390x844, 500x375",
+  "showroom_fog_and_floor_repair": "PASS: no fog and radius78 stage",
+  "panorama_assets_async_cache_fallback": "PASS: three bundled panorama hashes and simulated loader paths",
+  "venue_drag_keyboard_reset_cancel_navigation": "PASS",
+  "atmosphere_quality_and_reduced_motion": "PASS",
+  "grand_prix_world_geometry": "PASS: finite geometry, instanced spectators and trackside structures",
+  "desert_paddock_tent_bounds": "PASS: real Three.js Box3 intersection check",
+  "simulation_random_seed": 333,
+  "bundled_texture_files": "PASS: five manifest hashes and WebP signatures",
+  "tree_uvs_material_groups_instancing": "PASS",
+  "texture_cache_async_success_failure_fallback": "PASS",
+  "palm_frond_geometry": "PASS",
+  "all_car_track_combinations": [
+    {
+      "track": 0,
+      "car": 0,
+      "status": "PASS"
+    },
+    {
+      "track": 0,
+      "car": 1,
+      "status": "PASS"
+    },
+    {
+      "track": 0,
+      "car": 2,
+      "status": "PASS"
+    },
+    {
+      "track": 0,
+      "car": 3,
+      "status": "PASS"
+    },
+    {
+      "track": 1,
+      "car": 0,
+      "status": "PASS"
+    },
+    {
+      "track": 1,
+      "car": 1,
+      "status": "PASS"
+    },
+    {
+      "track": 1,
+      "car": 2,
+      "status": "PASS"
+    },
+    {
+      "track": 1,
+      "car": 3,
+      "status": "PASS"
+    },
+    {
+      "track": 2,
+      "car": 0,
+      "status": "PASS"
+    },
+    {
+      "track": 2,
+      "car": 1,
+      "status": "PASS"
+    },
+    {
+      "track": 2,
+      "car": 2,
+      "status": "PASS"
+    },
+    {
+      "track": 2,
+      "car": 3,
+      "status": "PASS"
+    }
+  ],
+  "old_save_compatibility": "PASS",
+  "geometry_and_material_lifecycle": "PASS",
+  "rain_racing_line_damage": "PASS",
+  "analog_multitouch_cancel_pause_blur": "PASS",
+  "settings_quality_camera_reset": "PASS",
+  "complete_qualifying_and_one_lap_race_with_AI": "PASS",
+  "reward_idempotency_and_completion_requirement": "PASS",
+  "missing_three_2d_fallback": "PASS",
+  "browser_visual_playtest": "NOT AVAILABLE",
+  "gpu_shader_compile": "NOT TESTED",
+  "physical_device": "NOT TESTED",
+  "measured_fps": "NOT TESTED"
+}

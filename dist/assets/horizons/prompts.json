@@ -1,0 +1,18 @@
+{
+  "tool": "built-in image_gen",
+  "generated_on": "2026-10-08",
+  "prompts": [
+    {
+      "asset": "mediterranean",
+      "prompt": "Use case: stylized-concept. Asset type: high fidelity racing game skybox panorama. Create one complete 360-degree equirectangular environment panorama, landscape 2:1 aspect ratio, 2048x1024 composition. Italian countryside seen from a motorsport venue at golden hour: layered distant Alpine foothills, dark green wooded ridges, tiny terracotta villages far away, clear blue upper sky and warm luminous wispy clouds. Exactly level horizon at vertical center, zenith at top and nadir ground at bottom. Left and right edges continuous for a full 360 wrap; NOT a strip of multiple images, no collage. Distant scenic skyline rather than any near objects. Lower half simple softly detailed olive meadow land. Upper half mostly expansive sky. Rich realistic contemporary racing simulator environment art with atmospheric depth, natural believable color, no lens flare. No road, cars, racing logos, people, text, UI, frames, watermark. Camera located flat at ground level; panorama lens projection only."
+    },
+    {
+      "asset": "harbor",
+      "prompt": "Use case: stylized-concept. Asset type: high fidelity racing game skybox panorama. One complete 360-degree equirectangular environment panorama, landscape 2:1 aspect ratio, 2048x1024 composition. Modern Japanese coastal harbor at blue-hour dusk, distant elegant city skyline with subtle cyan and warm window lights, distant container cranes and coastal mountains silhouetted, lavender and deep navy sky with faint luminous dusk clouds. Exactly level horizon at vertical center, zenith at top and nadir ground at bottom. Left and right edges continuous for a full 360 wrap; NOT multiple panels or collage. Far away skyline only, lower half subdued dark waterfront industrial terrain, upper half spacious photographic sky. Refined realistic contemporary racing simulator environment art, atmospheric depth, restrained lights, no garish neon. No road, cars, racing brands, people, text, UI, frames, watermark. Camera flat at ground level, equirectangular panorama projection."
+    },
+    {
+      "asset": "desert",
+      "prompt": "Use case: stylized-concept. Asset type: high fidelity racing game skybox panorama. One complete 360-degree equirectangular environment panorama, landscape 2:1 aspect ratio, 2048x1024 composition. Arabian desert around a motorsport venue at late golden-hour sunset, graceful layered sandy ridges and distant warm ochre mountains, tiny distant oasis palms and understated modern desert architecture, apricot horizon fading into lavender blue overhead with thin peach clouds. Exactly level horizon at vertical center, zenith at top and nadir ground at bottom. Left and right edges continuous for full 360 wrap; NOT multiple panels or collage. Distant skyline only. Lower half subdued soft golden sand, upper half expansive atmospheric sky. Refined realistic contemporary racing simulator environment art, cinematic depth and natural believable lighting, no flare. No road, cars, racing brands, people, text, UI, frames, watermark. Camera flat at ground level, equirectangular panorama projection."
+    }
+  ]
+}

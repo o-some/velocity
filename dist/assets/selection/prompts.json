@@ -1,0 +1,18 @@
+{
+  "version": "2.4.0",
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "file": "rosso",
+      "prompt": "Use case: stylized-concept. Asset type: wide 2:1 cinematic motorsport circuit selection artwork for a premium browser racing game. Mediterranean Grand Prix circuit in golden afternoon, sweeping dark asphalt bend with immaculate red white kerbs, green runoff and gravel safety zone, modern covered grandstand filled with small spectators, tasteful pit facilities, cypress and pine trees, terracotta villas and distant coastal hills. Camera elevated slightly above road looking into bend. Foreground sharp realistic asphalt texture, elegant natural atmospheric depth, physically plausible materials and photographic lighting. No cars, no words, no logos, no watermark. This is an original racing circuit mood image, not a map. Wide landscape composition."
+    },
+    {
+      "file": "harbor",
+      "prompt": "Use case: stylized-concept. Asset type: wide 2:1 cinematic motorsport circuit selection artwork for a premium browser racing game. Neon harbor Grand Prix circuit at blue hour, sweeping textured dark asphalt bend with white kerbs and muted cyan edge lights, professional catch fence, elegant covered grandstand, modern glazed pit facilities, container port cranes, harbor water and layered contemporary skyline in background. Restrained cyan and warm amber illumination, subtle road reflections but not a flooded street, believable materials, premium contemporary racing simulator promotional photograph. No cars, no words, no logos, no watermark. Original mood illustration, not a track map. Wide landscape."
+    },
+    {
+      "file": "desert",
+      "prompt": "Use case: stylized-concept. Asset type: wide 2:1 cinematic motorsport circuit selection artwork for a premium browser racing game. Desert Grand Prix at copper sunset, dark professional asphalt curve with white red kerbs, pale sand and gravel safety zones, modern shaded covered grandstands with small spectators, clean contemporary pit buildings, palms and a subtle stepped observation tower, layered dunes behind circuit. Low warm side light with cool sky, precise material detail, tasteful premium racing simulator promotional photograph, clean sophisticated composition. No cars, no words, no logos, no watermark. Original circuit mood artwork not a map. Wide landscape."
+    }
+  ]
+}
