@@ -317,8 +317,8 @@ function build3(T){
   const asph=add(rb(-h,h,.6,i=>tn((i>>3)&1?aA:aB,i,.08)));
   add(rb(-h,-h+3,1.8,()=>wh));add(rb(h-3,h,1.8,()=>wh));
   for(const s of[-1,1]){const a=s<0?-h-13:h,b=s<0?-h:h+13,a2=s<0?-h-82:h+13,b2=s<0?-h-13:h+82;
-    add(rb(a,b,1,i=>i&1?wh:rd));const runoff=add(rb(a2,b2,0,i=>tn((i>>1)&1?gv:gv2,i+99,.12)));applySurface3(runoff,'sand',110,.84);
-    add(strip(T,p=>{const o=s*(h+82);return[p.x+p.nx*o,0,p.y+p.ny*o,p.x+p.nx*o,16,p.y+p.ny*o]},i=>(i>>1)&1?wh:rd))}
+    const kerb=add(rb(a,b,1,i=>i&1?wh:rd));paintCircuitSurface3(kerb);const runoff=add(rb(a2,b2,0,i=>tn((i>>1)&1?gv:gv2,i+99,.12)));applySurface3(runoff,'sand',48,.84);
+    const barrier=add(strip(T,p=>{const o=s*(h+82);return[p.x+p.nx*o,0,p.y+p.ny*o,p.x+p.nx*o,16,p.y+p.ny*o]},i=>(i>>1)&1?wh:rd));paintCircuitSurface3(barrier,true)}
   for(const s of[-1,1]){const f=strip(T,p=>{const o=s*(h+86);return[p.x+p.nx*o,16,p.y+p.ny*o,p.x+p.nx*o,46,p.y+p.ny*o]},()=>C('#9aa0aa'));applyFence3(f,T);add(f);
     add(strip(T,p=>{const a=s*(h+80),b=s*(h+86);return[p.x+p.nx*a,16.2,p.y+p.ny*a,p.x+p.nx*b,16.2,p.y+p.ny*b]},()=>C('#d5d8df')));
     add(strip(T,p=>{const o=s*(h+86);return[p.x+p.nx*o,0,p.y+p.ny*o,p.x+p.nx*o,16,p.y+p.ny*o]},i=>(i>>1)&1?C('#8d1a22'):C('#b8bcc6')))}

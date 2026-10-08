@@ -2,6 +2,8 @@
   "version": "2.5.0",
   "status": "AUTOMATED RUNTIME TESTED",
   "scope": "Node VM, DOM/canvas/renderer/image-loader doubles; actual Three.js r128 geometry and camera math. Asset hashes and WebP signatures verified. No GPU rasterization or browser image decode.",
+  "harbor_realism": "PASS: four-sided physical facade, roof details, world-scale UVs, cached image failure/success, quality switch and facade hash",
+  "track_material_scale": "PASS: finer asphalt UVs, bounded bump and painted kerbs/barriers",
   "studio_pmrem_failure_restoration": "PASS: bundled Three.js PMREM constructor and render failure restore target, tone mapping, encoding and autoClear with renderer double",
   "live_stage_reflection_camera_clip_and_renderer_state": "PASS with GPU render double; simulated failure restores state and preserves physical fallback",
   "mirror_shader_injection": "PASS against bundled Three.js r128 shader source; no actual GPU compile",

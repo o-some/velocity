@@ -1,0 +1,12 @@
+{
+  "asset": "harbor-facade-v1.webp",
+  "size": [
+    1024,
+    1024
+  ],
+  "sha256": "b5117c7c4744fffdb82c678c3b8473fbadd5ec14f49fc777869ff25608145f58",
+  "tool": "built-in image_gen",
+  "prompt": "Use case: photorealistic-natural. Asset type: seamless architectural facade color texture for a real-time racing game, NOT a building picture or skyline. An orthographic perfectly straight-on tightly cropped square repeating curtain-wall facade module: exactly four equal columns and four equal floor rows of contemporary high-rise office glazing. Dark blue-gray reflective glass, slender brushed aluminum vertical mullions, thin horizontal slab/spandrel strips, subtle varied internal warm office lighting in just a few windows, some blinds, restrained reflections of dusk blue and rose sky. Photographic material realism, crisp architectural detail, neutral even illumination, natural restrained color. Entire image is wall surface edge-to-edge with no perspective, no ground, no roof, no sky around it, no people, no signage, no text, no watermark, no collage, no border. Tileable left/right and top/bottom; grid exactly aligns at all image edges; no giant reflected objects or strong gradients. Square texture.",
+  "processing": "RGB resize 1024x1024, WebP quality91; no semantic edits",
+  "usage": "Four opaque curtain-wall faces with meter-scaled UVs, subtle environment reflection. Artistic texture, not actual screenshot. GPU/browser/FPS unverified."
+}
