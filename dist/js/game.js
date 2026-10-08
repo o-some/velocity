@@ -334,9 +334,8 @@ function build3(T){
   for(let k=0;k<5;k++){const l=new THREE.Mesh(new THREE.SphereGeometry(5,10,8),new THREE.MeshBasicMaterial({color:0x3a0d12}));l.position.set(70,84,-48+k*24);gt.add(l);lights.push(l)}
   grp.add(gt);
   // Tribünen
-  const bg=new THREE.BoxGeometry(1,1,1),sb=new THREE.MeshLambertMaterial({color:0x1b1c22}),tops=['#ff5964','#eaeef6','#ffd166'].map(c=>new THREE.MeshLambertMaterial({color:c}));
-  for(let i=-26;i<=26;i+=2)for(const s of[-1,1]){const p=P[(i+N)%N],o=s*(h+150),m=new THREE.Mesh(bg,sb),t=new THREE.Mesh(bg,tops[(i+26>>1)%3]);
-    for(const[z,yy,hh,w]of[[m,17,34,70],[t,38,8,66]]){z.scale.set(T.ds*2.05,hh,w);z.position.set(p.x+p.nx*o,yy,p.y+p.ny*o);z.rotation.y=-p.t;grp.add(z)}}
+  const bg=new THREE.BoxGeometry(1,1,1),sb=new THREE.MeshStandardMaterial({color:'#a2a29a',map:TRACK_PAINT_MAP,roughness:.86});
+  for(let i=-26;i<=26;i+=2)for(const s of[-1,1]){const p=P[(i+N)%N];for(let row=0;row<3;row++){const o=s*(h+125+row*19),step=new THREE.Mesh(bg,sb);step.name='concrete-grandstand-terrace';step.scale.set(T.ds*2.05,34+row*6,22);step.position.set(p.x+p.nx*o,(34+row*6)/2,p.y+p.ny*o);step.rotation.y=-p.t;grp.add(step)}}
   // Bäume, Büsche, weiche Schatten
   let shd=null;
   {

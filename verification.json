@@ -2,6 +2,8 @@
   "version": "2.5.0",
   "status": "AUTOMATED RUNTIME TESTED",
   "scope": "Node VM, DOM/canvas/renderer/image-loader doubles; actual Three.js r128 geometry and camera math. Asset hashes and WebP signatures verified. No GPU rasterization or browser image decode.",
+  "photographic_crowd_and_stands": "PASS: eight instanced transparent atlas variants, finite UVs, alpha threshold and crowd asset hash; render unverified",
+  "desert_effects": "PASS: bounded sand particles, shader source injection, pause, rain, sparse and reduced-motion gates; GPU unverified",
   "harbor_realism": "PASS: four-sided physical facade, roof details, world-scale UVs, cached image failure/success, quality switch and facade hash",
   "track_material_scale": "PASS: finer asphalt UVs, bounded bump and painted kerbs/barriers",
   "studio_pmrem_failure_restoration": "PASS: bundled Three.js PMREM constructor and render failure restore target, tone mapping, encoding and autoClear with renderer double",

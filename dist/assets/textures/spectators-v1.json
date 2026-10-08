@@ -1,0 +1,20 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: photorealistic-natural. Asset type: transparent crowd sprite atlas for a real-time motorsport racing game. Create exactly EIGHT distinct adult motorsport spectators in a strict 4 columns x 2 rows uniform grid, each person isolated in their own equally sized cell with wide transparent margins. Each is a front-facing seated spectator shown from head through lap/knees, facing directly toward viewer, no chair visible, seated posture with hands on lap or one hand waving below head. Diverse men and women, varied skin tones, realistic natural faces, summer casual shirts in restrained red navy white tan teal, a few caps and sunglasses, no logos. Documentary photographic realism, fine hair and cloth details, neutral soft sunlight, evenly sized figures, consistent head height and scale in each cell. Full silhouette intact and separated in every cell; no overlapping neighboring cells, no objects extending past cell boundary, no background, no stands, no floor, no shadow plane, no text, no watermarks. Genuine transparent background including gaps between figures. Landscape image.",
+  "asset": "spectators-v1.webp",
+  "sha256": "43648dd521af4119191e05b931f254b0e74e99fbceed96ea103ed997ef9fc963",
+  "dimensions": [
+    1024,
+    1024
+  ],
+  "source_dimensions": [
+    1536,
+    1024
+  ],
+  "grid": [
+    4,
+    2
+  ],
+  "processing": "RGBA resize and WebP quality92 only; alpha retained",
+  "usage": "8 instanced seated photographic impostor variants, not animated full-3D humans; native 3D terrace and canopy geometry. No GPU/FPS evidence."
+}
